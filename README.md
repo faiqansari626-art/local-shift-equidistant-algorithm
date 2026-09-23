@@ -1,5 +1,5 @@
 # The Local Shift Equidistant Algorithm (LSEA)
-# formula x = x2 - [ (y1^2 - y2^2 + (x2 - x1)^2) / 2(x2 - x1) ]
+# The Local Shift Equidistant Formula x = x2 - [ (y1^2 - y2^2 + (x2 - x1)^2) / 2(x2 - x1) ]
 
 Developed by **Faiq Ansari**
 
