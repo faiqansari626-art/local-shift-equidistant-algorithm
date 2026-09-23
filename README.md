@@ -17,25 +17,27 @@ The **Local Shift Equidistant Algorithm (LSEA)** optimizes this pipeline by form
 
 ## 🛠️ The Implementation (Python)
 
-```python
 def find_equidistant_x_axis(x1, y1, x2, y2):
     """
     Computes the equidistant point (x, 0) on the x-axis 
     using the optimized Local Shift Equidistant Algorithm.
     Author: Faiq Ansari
     """
-    # Calculate the localized relative horizontal separation
+    # Step 1: Calculate relative horizontal separation
     delta_x = x2 - x1
     
-    # Run the optimized single-expansion shift formula (B2)
-    # Reduces explicit squaring operations from 4 to 3
+    # Step 2: Guard check to protect against ZeroDivisionError on vertical layouts
+    if delta_x == 0:
+        return 0.0
+    
+    # Step 3: Run the single-expansion shift formula (3 explicit squares)
     b2 = (y1**2 - y2**2 + delta_x**2) / (2 * delta_x)
     
-    # Shift the relative vector back to global coordinates
+    # Step 4: Translate localized vector back to absolute coordinates
     target_x = x2 - b2
     
     return target_x
-```
+    
 
 ---
 
