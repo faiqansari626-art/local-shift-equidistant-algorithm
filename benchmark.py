@@ -17,7 +17,7 @@ def local_shift_algorithm(x1, y1, x2, y2):
     """
     delta_x = x2 - x1
     
-    # Advanced Edge-Case Guards for Vertical Alignment (x1 == x2)
+    # Edge-Case Guards for Vertical Alignment (x1 == x2)
     if delta_x == 0:
         if abs(y1) == abs(y2):
             raise ValueError("Infinite equidistant solutions exist (x1 == x2, |y1| == |y2|)")
