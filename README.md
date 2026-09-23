@@ -26,9 +26,11 @@ def find_equidistant_x_axis(x1, y1, x2, y2):
     # Step 1: Calculate relative horizontal separation
     delta_x = x2 - x1
     
-    # Step 2: Guard check to protect against ZeroDivisionError on vertical layouts
+    # Step 2: Advanced Edge-Case Guards for Vertical Alignment
     if delta_x == 0:
-        return 0.0
+        if abs(y1) == abs(y2):
+            raise ValueError("Infinite equidistant solutions exist (x1 == x2, |y1| == |y2|)")
+        raise ValueError("No equidistant point exists on the x-axis (x1 == x2, |y1| != |y2|)")
     
     # Step 3: Run the single-expansion shift formula (3 explicit squares)
     b2 = (y1**2 - y2**2 + delta_x**2) / (2 * delta_x)
@@ -38,7 +40,6 @@ def find_equidistant_x_axis(x1, y1, x2, y2):
     
     return target_x
     
-
 ---
 
 ## 📊 Benchmarks & Verification
