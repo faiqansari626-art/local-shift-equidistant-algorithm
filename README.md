@@ -26,7 +26,7 @@ def find_equidistant_x_axis(x1, y1, x2, y2):
     # Step 1: Calculate relative horizontal separation
     delta_x = x2 - x1
     
-    # Step 2: Advanced Edge-Case Guards for Vertical Alignment
+    # Step 2: Edge-Case Guards for Vertical Alignment
     if delta_x == 0:
         if abs(y1) == abs(y2):
             raise ValueError("Infinite equidistant solutions exist (x1 == x2, |y1| == |y2|)")
