@@ -1,5 +1,11 @@
 # The Local Shift Equidistant Algorithm (LSEA)
+# formula x = x2 - [ (y1^2 - y2^2 + (x2 - x1)^2) / 2(x2 - x1) ]
+
 Developed by **Faiq Ansari**
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+
 
 An optimized, low-overhead pipeline for calculating equidistant spatial points on a target axis without absolute origin coordinate expansions or multi-binomial expansions.
 
