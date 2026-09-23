@@ -9,10 +9,11 @@ Traditional textbook coordinate systems calculate geometric relationships global
 
 The **Local Shift Equidistant Algorithm (LSEA)** bypasses global bottlenecks by executing a **Local Translation Vector**. By shifting the computational origin directly into the interval between the targeted coordinates, the algorithm converts global values into a narrow, relative span (delta_x). 
 
-### Key Performance Benefits:
-* **Multiplication Reduction:** Drops total polynomial expansions and reduces hardware multiplication cycles by **25%** compared to textbook implementations.
-* **Low Power Footprint:** Keeps working numerical bounds small, allowing the CPU/GPU to utilize rapid, lower-power local cache memory registers rather than high-power 64-bit floating-point registers.
+### Key Performance Benefits.
+  * **Algorithmic Reduction:** Reduces the number of explicit squaring operations from four to three compared with a straightforward expanded implementation, offering a theoretical 25% reduction in those specific operations.
+* **Localized Working Bounds:** Minimizes numerical scale by isolating a localized relative horizontal span, avoiding the processing of massive absolute coordinates directly from the global origin.
 * **Edge-Case Stability:** Automatically self-corrects for negative coordinate boundaries outside the visual interval using signed distance geometry principles.
+
 
 ---
 
